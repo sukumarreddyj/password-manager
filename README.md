@@ -1,6 +1,3 @@
-Here’s the **complete README.md** in one single block so you can copy-paste directly into your project:
-
----
 
 ```markdown
 # Password Manager (Java 17 + Spring Boot)
