@@ -29,22 +29,34 @@ It provides REST APIs to store credentials securely, generate strong random pass
 ---
 
 ## Project Structure
-```
+password-manager-api/
+ ├─ src/
+ │   ├─ main/
+ │   │   ├─ java/
+ │   │   │   └─ com/
+ │   │   │       └─ myapp/
+ │   │   │           └─ passwordmanager/
+ │   │   │               ├─ PasswordManagerApplication.java    # Main entry point
+ │   │   │               ├─ controller/
+ │   │   │               │    └─ CredentialController.java     # REST endpoints
+ │   │   │               ├─ service/
+ │   │   │               │    ├─ PasswordService.java          # Core business logic
+ │   │   │               │    ├─ FileStorageService.java        # Handles file-based persistence
+ │   │   │               │    └─ EncryptionService.java         # AES encryption/decryption
+ │   │   │               ├─ model/
+ │   │   │               │    └─ Credential.java                # Record class (POJO)
+ │   │   │               └─ util/
+ │   │   │                    └─ PasswordGenerator.java         # Utility for random password generation
+ │   │   └─ resources/
+ │   │        ├─ application.properties                         # Configurations (empty for now)
+ │   │        └─ static/ (optional)
+ │   │        └─ templates/ (optional)
+ │   └─ test/                                                   # Unit tests (optional)
+ │
+ ├─ .gitignore
+ ├─ pom.xml                                                     # Maven dependencies
+ └─ README.md
 
-src/main/java/com/myapp/passwordmanager/
-├─ PasswordManagerApplication.java
-├─ controller/
-│    └─ CredentialController.java
-├─ service/
-│    ├─ PasswordService.java
-│    ├─ FileStorageService.java
-│    └─ EncryptionService.java
-├─ model/
-│    └─ Credential.java
-└─ util/
-└─ PasswordGenerator.java
-
-````
 
 ---
 
